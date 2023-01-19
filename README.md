@@ -13,7 +13,7 @@ The Quarto theme also includes several improvements to the xaringan version:
 ![Grey Out Bullet Points](img/grey-out.png)
 * Opinionated code highlighting for teaching
 ![Opinionated code highlighting](img/highlighting.png)
-* [Principled knitr settings]() for figure output
+* [Principled knitr settings](https://github.com/malcolmbarrett/kakashi-quarto-theme/blob/7f55625cc24fa862ae0ca88fe3a14b0786a62995/_extensions/kakashi/_extension.yml#L7-L18) for figure output
 ![Principled figure output](img/figures.png)
 
 ## How to install
