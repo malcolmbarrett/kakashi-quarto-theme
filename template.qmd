@@ -1,0 +1,171 @@
+---
+title: "Quarto Kakashi Theme"
+author: "Malcolm Barrett"
+format: kakashi-revealjs
+---
+
+```{r setup, include=FALSE}
+options(
+  tibble.max_extra_cols = 6, 
+  tibble.width = 60
+)
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation.
+To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+> This is part of the [Quarto documentation](https://quarto.org/docs/presentations/).
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+> This is part of the [Quarto documentation](https://quarto.org/docs/presentations/).
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code.
+You can embed code like this:
+
+```{r}
+#| echo: true
+1 + 1
+```
+
+> This is part of the [Quarto documentation](https://quarto.org/docs/presentations/).
+
+You can also add `text marked as code`!
+
+# New topic! {background-color="#23373B"}
+
+To make a slide like this, use:
+
+    # Title of slide {background-color="#562457"}
+
+## Tabset example
+
+::: panel-tabset
+## Example 1
+
+Content here for tabset 1 :)
+
+## Example 2
+
+More content here, for tabset 2 :)
+:::
+
+## Incremental content
+
+Hi! 
+
+. . .
+
+
+Use `. . .` to separate content as an incremental slide!
+
+. . .
+
+Bye!
+
+## Numbers
+
+1. thing 1
+1. thing 2
+1. thing 3
+
+
+## You can add R code
+
+```{r}
+#| echo: true
+#| code-line-numbers: "|2,4|5|6"
+library(dplyr)
+library(ggplot2)
+g <- starwars |> 
+  ggplot() +
+  geom_point(aes(x = height, y = mass)) +
+  theme_light()
+```
+
+## And show the results, as well :)
+
+```{r}
+#| fig.align: center
+#| echo: true
+g 
+```
+
+## What about tables? {.smaller}
+
+### `knitr::kable()`
+
+::: columns
+::: {.column width="50%"}
+```{r}
+#| label: kable-ex
+#| echo: true
+#| eval: false
+tab <- starwars |>
+  tidyr::drop_na(species) |> 
+  group_by(species) |>
+  summarise(
+    n = n(),
+    mean_heigth = round(mean(height, na.rm = TRUE)),
+    mean_mass = round(mean(mass, na.rm = TRUE))
+  ) |> 
+  slice_max(order_by = n, n = 4) 
+
+knitr::kable(tab)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: kable-ex
+#| eval: true
+```
+:::
+:::
+
+## `DT::datatable()` {.small}
+
+With the `smaller` class in the slide!
+Ex: `## slide name {.small}`
+
+```{r}
+DT::datatable(tab, options = list(pageLength = 5))
+```
+
+## `gt::gt()`
+
+```{r}
+gt::gt(tab)
+```
+
+## `reactable::reactable()`
+
+```{r}
+reactable::reactable(tab)
+```
+
+## Diagrams with Mermaid!
+
+Read about how to create a diagram in this [post by Mine Çetinkaya-Rundel](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/posts/21-diagrams/).
+
+<center>
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/quartotip?src=hash&amp;ref_src=twsrc%5Etfw">#quartotip</a> 21: Create diagrams in Quarto documents using Mermaid or Graphviz in executable code cells, similar to how you create figures.<br><br>Read more: <a href="https://t.co/3qx9oSNCay">https://t.co/3qx9oSNCay</a> <a href="https://t.co/fYzGcISl4h">pic.twitter.com/fYzGcISl4h</a></p>&mdash; Quarto (@quarto_pub) <a href="https://twitter.com/quarto_pub/status/1549271325943947270?ref_src=twsrc%5Etfw">July 19, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
+
+## Exporting into PDF
+
+You can use the function `pagedown::chrome_print()` to print the HTML version into a PDF!
+
+```r
+pagedown::chrome_print("path-to-file.html")
+```
