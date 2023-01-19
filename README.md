@@ -32,6 +32,8 @@ After you install the template, use the following code on terminal to create a n
 quarto use template malcolmbarrett/kakashi-quarto-theme
 ```
 
+If you want to use the theme across a project, install the theme in the root directory and set up a [Quarto project](https://quarto.org/docs/projects/quarto-projects.html).
+
 ## Thanks!
 
 My thanks to [Bea Milz](https://beamilz.com/) and [Emil Hvitfeldt](https://www.emilhvitfeldt.com/), on whose Quarto themes for [R-Ladies](https://github.com/beatrizmilz/quarto-rladies-theme) and [nes.css](https://github.com/EmilHvitfeldt/quarto-nes-theme) I leaned on heavily.
