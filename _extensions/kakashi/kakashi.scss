@@ -104,6 +104,7 @@ section.has-dark-background h2  {
   color: $light-blue;
   font-weight: 500;
 }
+
 a, a > code {
   color: $pink;
   text-decoration: none;
@@ -162,6 +163,18 @@ ol {
 
 .fragment:not(.current-fragment)::before {
   background-color: lighten($light-grey, 3%);
+}
+
+.fragment:not(.current-fragment) strong {
+  color: $light-grey;
+}
+
+.fragment:not(.current-fragment) em {
+  color: $light-grey;
+}
+
+.fragment:not(.current-fragment) del {
+  color: $light-grey;
 }
 
 .current-fragment {
