@@ -61,7 +61,7 @@ More content here, for tabset 2 :)
 
 ## Incremental content
 
-Hi! 
+*Hi!*
 
 . . .
 
@@ -74,9 +74,9 @@ Bye!
 
 ## Numbers
 
-1. thing 1
-1. thing 2
-1. thing 3
+1. **thing 1**
+1. *thing 2*
+1. ~~thing 3~~
 
 
 ## You can add R code
