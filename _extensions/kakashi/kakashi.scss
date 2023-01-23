@@ -3,24 +3,24 @@
 @import url(https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,500,500i,700,700i|IBM+Plex+Mono:400,500);
 @import url(//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css);
 
-// colors  
-$light-blue: #56B4E9;
-$pale-blue: #CEE9FF;
-$dark-blue: #0072B2;
-$light-grey: #EDEEEF;
-$grayish-black: #474747;
-$greenish-black: #23373B;
-$grey: #E5E5E5;
-$dark-grey: #6C7B7F;
-$pink: #EC99C6;
-$orange: #E69F00;
-$green: #009E73;
+// colors
+$light-blue: #56B4E9 !default;
+$pale-blue: #CEE9FF !default;
+$dark-blue: #0072B2 !default;
+$light-grey: #EDEEEF !default;
+$grayish-black: #474747 !default;
+$greenish-black: #23373B !default;
+$grey: #E5E5E5 !default;
+$dark-grey: #6C7B7F !default;
+$pink: #EC99C6 !default;
+$orange: #E69F00 !default;
+$green: #009E73 !default;
 
 // fonts
 $font-family-serif: 'Fira Sans','Droid Serif', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif !default;
 
 // headings
-$presentation-heading-font: $font-family-serif;
+$presentation-heading-font: $font-family-serif !default;
 $presentation-heading-color: $grayish-black !default;
 $h1-font-size: 1.6em !default;
 $h2-font-size: 1.3em !default;
@@ -31,19 +31,19 @@ $code-color: $green !default;
 $font-family-monospace: 'IBM Plex Mono', 'Lucida Console', Monaco, monospace !default;
 
 // quarto variables
-$body-bg: #fff;
-$body-color: $grayish-black;
-$link-color: $pink;
-$presentation-font-size-root: 36px;
-$selection-bg: $light-grey;
-$selection-color: $body-color;
+$body-bg: #fff !default;
+$body-color: $grayish-black !default;
+$link-color: $pink !default;
+$presentation-font-size-root: 36px !default;
+$selection-bg: $light-grey !default;
+$selection-color: $body-color !default;
 
 /*-- scss:rules --*/
 .reveal pre code {
-  background-color: $light-grey;
-  font-size: 1em;
+  font-size: 1.3em;
   padding: 0.5em;
   line-height: 1.2em;
+  overflow: visible;
 }
 
 #title-slide {
@@ -62,13 +62,13 @@ $selection-color: $body-color;
 .subtitle {
   color: $light-blue;
   text-shadow: none;
-  font-size: 48px;
+  font-size: 72px;
   font-weight: bold;
 }
 
 .quarto-title-authors {
   color: $light-grey;
-  font-size: 72px;
+  font-size: 64px;
   font-family: $presentation-heading-font;
 }
 
@@ -115,7 +115,7 @@ strong {
 }
 
 em {
-  color: $light-blue;  
+  color: $light-blue;
   font-style: normal;
   font-weight: bold;
 }
@@ -155,6 +155,18 @@ ol {
 
 .fragment:not(.current-fragment) {
   color: $light-grey;
+}
+
+section.has-dark-background .fragment:not(.current-fragment) {
+  color: $dark-grey;
+}
+
+section.has-dark-background .fragment:not(.current-fragment) strong {
+  color: $dark-grey;
+}
+
+section.has-dark-background .fragment:not(.current-fragment) em {
+  color: $dark-grey;
 }
 
 .fragment:not(.current-fragment) code {
