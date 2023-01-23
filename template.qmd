@@ -78,11 +78,17 @@ Bye!
 1. *thing 2*
 1. ~~thing 3~~
 
+## Non-Incremental lists
+
+::: {.nonincremental}
+- **thing 1**
+- *thing 2*
+- ~~thing 3~~
+:::
 
 ## You can add R code
 
 ```{r}
-#| echo: true
 #| code-line-numbers: "|2,4|5|6"
 library(dplyr)
 library(ggplot2)

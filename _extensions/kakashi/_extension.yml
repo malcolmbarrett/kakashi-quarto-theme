@@ -2,10 +2,11 @@ title: Kakashi Reveal.js Quarto Presentation
 author: Malcolm Barrett
 version: 0.0.1
 contributes:
-  formats: 
+  formats:
     common:
       knitr:
-        opts_chunk: 
+        opts_chunk:
+          echo: true
           warning: false
           message: false
           dev: "ragg_png"
