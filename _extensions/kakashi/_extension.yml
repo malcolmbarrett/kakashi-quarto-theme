@@ -28,3 +28,7 @@ contributes:
       code-overflow: wrap
       menu: false
       incremental: true
+      auto-animate: true
+      transition: fade
+      background-transition: fade
+      transition-speed: fast

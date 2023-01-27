@@ -105,9 +105,18 @@ section.has-dark-background h2  {
   font-weight: 500;
 }
 
-a, a > code {
+a, a > code  {
   color: $pink;
   text-decoration: none;
+}
+
+section.has-dark-background a, a > code  {
+  color: $pink;
+  text-decoration: none;
+}
+
+section.has-dark-background code  {
+  color: $green;
 }
 
 strong {
@@ -161,11 +170,31 @@ section.has-dark-background .fragment:not(.current-fragment) {
   color: $dark-grey;
 }
 
+section.has-dark-background .fragment:not(.current-fragment) {
+  color: $dark-grey;
+}
+
+section.has-dark-background .current-fragment {
+  color: $light-grey;
+}
+
 section.has-dark-background .fragment:not(.current-fragment) strong {
   color: $dark-grey;
 }
 
 section.has-dark-background .fragment:not(.current-fragment) em {
+  color: $dark-grey;
+}
+
+section.has-dark-background .fragment:not(.current-fragment) a, a > code  {
+  color: $dark-grey;
+}
+
+section.has-dark-background .fragment:not(.current-fragment) code {
+  color: $dark-grey;
+}
+
+section.has-dark-background .fragment:not(.current-fragment) del {
   color: $dark-grey;
 }
 
@@ -177,6 +206,10 @@ section.has-dark-background .fragment:not(.current-fragment) em {
   background-color: lighten($light-grey, 3%);
 }
 
+section.has-dark-background .fragment:not(.current-fragment)::before {
+  background-color: lighten($dark-grey, 3%);
+}
+
 .fragment:not(.current-fragment) strong {
   color: $light-grey;
 }
@@ -186,6 +219,10 @@ section.has-dark-background .fragment:not(.current-fragment) em {
 }
 
 .fragment:not(.current-fragment) del {
+  color: $light-grey;
+}
+
+.fragment:not(.current-fragment) a {
   color: $light-grey;
 }
 
@@ -243,7 +280,22 @@ ol li::before {
   visibility: hidden;
 }
 
+.middle {
+  vertical-align: middle;
+}
+
+.center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center {
+  text-align: center;
+}
+
 .huge { font-size: 200% }
+.extra-large { font-size: 150% }
 .large { font-size: 130% }
 .medium { font-size: 115% }
 .small { font-size: 70% }
